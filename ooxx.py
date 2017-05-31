@@ -59,3 +59,4 @@ def download_mm(folder = '00xx',pages = 10):
 
 if __name__ == '__main__':
     download_mm()
+#为了实践git,增加的注释
