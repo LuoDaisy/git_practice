@@ -3,11 +3,14 @@ import os
 
 def get_number(url):
     html = open_url(url).decode('utf-8')
-    a = html.find('current-comment-page') + 23
-    b = html.find(']',a)
-    print(html[a:b])
-    return html[a:b]
-
+    #a = html.find('current-comment-page') + 23
+    #b = html.find(']',a)
+    #print(html[a:b])
+    #return html[a:b]
+    r = r'<span class="current-comment-page">\[([1-9]\d*)\]</span>'
+    number = re.findall(r,html)
+    print(number)
+    return number[0]
 
 def open_url(url):
     req = urllib.request.Request(url)
